@@ -1,8 +1,7 @@
 from data_prep import DataPrep
 
-d = DataPrep()
-d.load_data()
+data_prep = DataPrep()
 
-DataPrep.quantile(4)
-
-DataPrep.data
+data_prep.data
+data_prep.width
+data_prep.data

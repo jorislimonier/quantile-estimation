@@ -3,12 +3,17 @@ import pandas as pd
 import numpy as np
 
 class DataPrep():
+    def __init__(self):
+        self.data = self.load_data()
+        self.stat = self.load()
+        self.width = self.get_width()
+        self.results = self.get_results()
+
     # Get quantile of n zeros
     def quantile(k):
         return 1 - 10**(-k)
 
-    @staticmethod
-    def load_data():
+    def load_data(self):
         # getting data from excel file
         cwd = os.getcwd()
         data = pd.read_excel(cwd + "/20201030_data.xlsx", sheet_name=1).iloc[2:,1:4]
@@ -17,17 +22,22 @@ class DataPrep():
         data = data.reset_index(drop=True)
         data.columns.name = None
         data = data.convert_dtypes()
-        DataPrep.data = data
+        return data
 
-    def get_stat():
+    def load(self):
         # getting statistics from excel file
-        st = pd.read_excel("20201030_data.xlsx", sheet_name=1, header=3).iloc[:1, 12:19]
-        return
+        return pd.read_excel("20201030_data.xlsx", sheet_name=1, header=3).iloc[:1, 12:19]
 
-    def get_width():
+    def get_width(self):
         # get bin width as variable since all bin width are the same
-        width = data["Width"][0]
-        data = data.drop(columns="Width")
+        width = self.data["Width"][0]
+        self.data = self.data.drop(columns="Width")
+        return width
+
+    def get_results(self):
+        # generate results from data
+        results = np.repeat(self.data["Value"], self.data["Count"])
+        return np.array(results)
 
 
 # results = np.repeat(data["Value"], data["Count"])
