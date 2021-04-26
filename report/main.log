@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.11)  26 APR 2021 12:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.11)  26 APR 2021 12:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -283,29 +283,29 @@ File: images/estimation_q5.png Graphic file (type png)
 Package pdftex.def Info: images/estimation_q5.png  used on input line 70.
 (pdftex.def)             Requested size: 289.79874pt x 157.82649pt.
  [2 </home/joris/Documents/work/quantile_estimation/report/images/excel_data.png> </home/joris/Documents/work/quantile_estimation/report/images/plot_excel_data.png>] [3] [4 </home/joris/Documents/work/quantile_estimation/report/images/estimation_q3.png> </home/joris/Documents/work/quantile_estimation/report/images/estimation_q4.png> </home/joris/Documents/work/quantile_estimation/report/images/estimation_q5.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
  [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
  (/home/joris/Documents/work/quantile_estimation/report/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 57DC5E6298664AE730B3B6FF25DACC13;209.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 113.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
  ) 
 Here is how much of TeX's memory you used:
- 6480 strings out of 483107
- 104212 string characters out of 5964630
- 356569 words of memory out of 5000000
- 21392 multiletter control sequences out of 15000+600000
+ 6483 strings out of 483107
+ 104244 string characters out of 5964630
+ 356601 words of memory out of 5000000
+ 21393 multiletter control sequences out of 15000+600000
  537544 words of font info for 41 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,8n,42p,461b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on /home/joris/Documents/work/quantile_estimation/report/main.pdf (5 pages, 258837 bytes).
+Output written on /home/joris/Documents/work/quantile_estimation/report/main.pdf (5 pages, 259538 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 18 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

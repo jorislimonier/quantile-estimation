@@ -50,7 +50,7 @@ We define the n-th quantile as follows:
 which gives $q_1 = 0.9$, $q_2 = 0.99$ ...etc. Where simply speaking $q_n$ represents ``0" followed by $n$ nines. We are mostly interested in $q_3, q_4$ and $q_5$.
 
 \section{Bootstrap}
-
+\label{section: bootstrap}
 We use the bootstrap to estimate the value of the quantiles even with small to moderate sample size. That is, we take a random sample of a given length from our data, compute the quantile we are interested in, then repeat the process over multiple runs. \\
 The results from the bootstrap are shown in figure \ref{fig: estimation of quantiles}:
 
@@ -106,7 +106,16 @@ More generally, for a confidence level of $\gamma$ (instead of $95\%$), one has 
 \]
 
 \section{Fine tuning}
-Let us assume that we are working with a given data set and we have no way of getting new or more reliable data. We are trying to get the quantiles as precisely as possible and with confidence intervals as small as possible.
+Let us assume that we are working with a given data set and we have no way of getting new or more reliable data. We are trying to get the quantiles as precisely as possible and with confidence intervals as small as possible. 
+
+There are two parameters of the bootstrap that we can adjust to meet our goals
+\begin{enumerate}
+    \item The size of the resamples.
+    \item The number of resamples.
+\end{enumerate}\
+
+We touched on the number of resamples already in section \ref{section: bootstrap}, however we haven't dicussed the size of the resamples.
+
 
 
 
