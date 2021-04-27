@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 
+
 class DataPrep():
     def __init__(self):
         self.data = self.load_data()
@@ -16,8 +17,8 @@ class DataPrep():
     def load_data(self):
         # getting data from excel file
         cwd = os.getcwd()
-        print(cwd)
-        data = pd.read_excel(cwd + "/data/20201030_data.xlsx", sheet_name=1).iloc[2:,1:4]
+        data = pd.read_excel(cwd + "/data/20201030_data.xlsx",
+                             sheet_name=1).iloc[2:, 1:4]
         data.columns = data.iloc[0]
         data = data.iloc[1:]
         data = data.reset_index(drop=True)
@@ -43,4 +44,3 @@ class DataPrep():
 
 # results = np.repeat(data["Value"], data["Count"])
 # results = np.array(results)
-
