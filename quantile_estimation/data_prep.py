@@ -35,8 +35,4 @@ class DataPrep():
     def get_results(self):
         """generate results from data"""
         results = np.repeat(self.data["Value"], self.data["Count"])
-        return np.array(results)
-
-
-# results = np.repeat(data["Value"], data["Count"])
-# results = np.array(results)
+        return np.array(results) + (self.width / 2)

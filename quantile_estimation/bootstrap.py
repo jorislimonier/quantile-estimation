@@ -11,11 +11,11 @@ class Bootstrap():
         return 1 - 10**(-k)
 
     @staticmethod
-    def bootstrap(quantile, nb_resample, results):
+    def bootstrap(quantile, nb_resample, results, resample_size, random_state=None):
         """takes the q quantile from a resample of the results, repeats n times"""
         boot = np.array([])
         for _ in range(nb_resample):
-            r = resample(results)
+            r = resample(results, n_samples=resample_size, random_state=random_state)
             r_quantile = np.quantile(r, quantile, interpolation="linear")
             boot = np.append(boot, r_quantile)
         return boot

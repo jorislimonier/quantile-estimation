@@ -31,12 +31,12 @@ class DataVisualization():
         return fig
 
     @staticmethod
-    def hist_bootstrap(b):
+    def hist_bootstrap(boot):
         """takes an array with results from the bootstrap
         draws a histogram of the quantile value from the bootstrap"""
         fig = make_subplots()
-        # xbins = go.histogram.XBins(size=width/3)
-        hist = go.Histogram(x=b)  # , xbins=xbins)
+        xbins = go.histogram.XBins(size=0.001)
+        hist = go.Histogram(x=boot, xbins=xbins)  # , xbins=xbins)
         fig.add_trace(hist)
         fig.update_layout(
             title="Values of the quantile over all runs",
