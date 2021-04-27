@@ -10,12 +10,8 @@ class DataPrep():
         self.width = self.get_width()
         self.results = self.get_results()
 
-    # Get quantile of n zeros
-    def quantile(k):
-        return 1 - 10**(-k)
-
     def load_data(self):
-        # getting data from excel file
+        """getting data from excel file"""
         cwd = os.getcwd()
         data = pd.read_excel(cwd + "/data/20201030_data.xlsx",
                              sheet_name=1).iloc[2:, 1:4]
@@ -27,17 +23,17 @@ class DataPrep():
         return data
 
     def load(self):
-        # getting statistics from excel file
+        """getting statistics from excel file"""
         return pd.read_excel("data/20201030_data.xlsx", sheet_name=1, header=3).iloc[:1, 12:19]
 
     def get_width(self):
-        # get bin width as variable since all bin width are the same
+        """get bin width as variable since all bin width are the same"""
         width = self.data["Width"][0]
         self.data = self.data.drop(columns="Width")
         return width
 
     def get_results(self):
-        # generate results from data
+        """generate results from data"""
         results = np.repeat(self.data["Value"], self.data["Count"])
         return np.array(results)
 
