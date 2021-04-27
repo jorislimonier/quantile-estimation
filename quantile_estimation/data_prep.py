@@ -16,7 +16,8 @@ class DataPrep():
     def load_data(self):
         # getting data from excel file
         cwd = os.getcwd()
-        data = pd.read_excel(cwd + "/20201030_data.xlsx", sheet_name=1).iloc[2:,1:4]
+        print(cwd)
+        data = pd.read_excel(cwd + "/data/20201030_data.xlsx", sheet_name=1).iloc[2:,1:4]
         data.columns = data.iloc[0]
         data = data.iloc[1:]
         data = data.reset_index(drop=True)
@@ -26,7 +27,7 @@ class DataPrep():
 
     def load(self):
         # getting statistics from excel file
-        return pd.read_excel("20201030_data.xlsx", sheet_name=1, header=3).iloc[:1, 12:19]
+        return pd.read_excel("data/20201030_data.xlsx", sheet_name=1, header=3).iloc[:1, 12:19]
 
     def get_width(self):
         # get bin width as variable since all bin width are the same
