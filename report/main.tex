@@ -4,6 +4,7 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{multirow}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks  = true,
@@ -119,6 +120,27 @@ There are two parameters of the bootstrap that we can adjust to meet our goals
 We touched on the number of resamples already in section \ref{section: bootstrap}, however we haven't dicussed the size of the resamples.
 
 What impact would increasing the size of the resamples have ? The only time it comes into play is when we take the quantiles of the resamples. Then, what would happen if we took the quantiles of a resample of different size ? Taking the quantile of a smaller resample likely means that we will have less \textit{refinement}. That is, our quantiles at each resample would likely take a smaller set of values. This is further explained by the way we proceed if we have sparse values, which is our case since we work with ``high" quantiles (where we have few values available).
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+                & \multicolumn{3}{c|}{Quantile}                        \\
+        \hline
+                & q3                           & q4       & q5        \\
+        \hline
+        100     & 0.076622                     & 0.079702 & 0.0799506 \\
+        1000    & 0.040009                     & 0.051016 & 0.0546004 \\
+        10000   & 0.015000                     & 0.020000 & 0.0249999 \\
+        100 000 & 0.005000                     & 0.010000 & 0.0049999 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+
+
+
+
 
 
 
