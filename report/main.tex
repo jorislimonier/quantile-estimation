@@ -4,6 +4,7 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{multirow}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks  = true,
@@ -19,11 +20,19 @@
 \begin{document}
 \maketitle
 
+\newpage
 \tableofcontents
+\listoffigures
 \newpage
 
 \section{Introduction}
-In this project we work on limited data to estimate the values which have a given ``low" likelihood. We want to answer questions such as ``what is the minimum value which will happen less than 1 case per 10 000 on average ?". Moreover, we are interested in determining how certain we are of our estimates.
+In this project we want to estimate the confidence we have when computing various quantiles. This task may be fairly straightforward when working with known distributions or arbitrary amounts of data but this seldom occurs in engineering or other real world applications. For this reason, here we try to accomplish that task on an unknown distribution and given limited amounts of data.
+
+We define the n-th quantile as follows:
+\begin{equation}
+    q_n := 1 - 10^{-n}
+\end{equation}
+which gives $q_1 = 0.9$, $q_2 = 0.99$ ...etc. Where, simply speaking, $q_n$ represents ``0" followed by $n$ nines. For our applications, we are mostly interested in $q_3, q_4$ and $q_5$.
 
 The data we work with is presented in figure \ref{fig: initial data} and plotted in the histogram in figure \ref{fig: visual representation of the initial data}.
 
@@ -45,15 +54,16 @@ The data we work with is presented in figure \ref{fig: initial data} and plotted
     \caption{A look at the initial data}
 \end{figure}
 
-We define the n-th quantile as follows:
-\begin{equation}
-    q_n := 1 - 10^{-n}
-\end{equation}
-which gives $q_1 = 0.9$, $q_2 = 0.99$ ...etc. Where simply speaking $q_n$ represents ``0" followed by $n$ nines. We are mostly interested in $q_3, q_4$ and $q_5$.
-
 \section{Bootstrap}
 \label{section: bootstrap}
-We use the bootstrap to estimate the value of the quantiles even with small to moderate sample size. That is, we take a random sample of a given length from our data, compute the quantile we are interested in, then repeat the process over multiple runs. \\
+We use the bootstrap to estimate the confidence in the computed quantiles, even with small to moderate sample size.
+
+Let \(n\) be the size of the data at our disposal and let \(q_k\) be the quantile we are interested in computer. Here is how we proceed:
+\begin{enumerate}
+    \item We draw a random sample of size \(n\) with replacement from our initial data.
+    \item We compute \(q_k\) on the sample we just drew.
+    \item We repeat the process over multiple runs.
+\end{enumerate}
 The results from the bootstrap are shown in figure \ref{fig: estimation of quantiles}:
 
 \begin{figure}
@@ -119,6 +129,27 @@ There are two parameters of the bootstrap that we can adjust to meet our goals
 We touched on the number of resamples already in section \ref{section: bootstrap}, however we haven't dicussed the size of the resamples.
 
 What impact would increasing the size of the resamples have ? The only time it comes into play is when we take the quantiles of the resamples. Then, what would happen if we took the quantiles of a resample of different size ? Taking the quantile of a smaller resample likely means that we will have less \textit{refinement}. That is, our quantiles at each resample would likely take a smaller set of values. This is further explained by the way we proceed if we have sparse values, which is our case since we work with ``high" quantiles (where we have few values available).
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+                & \multicolumn{3}{c|}{Quantile}                        \\
+        \hline
+                & q3                           & q4       & q5        \\
+        \hline
+        100     & 0.076622                     & 0.079702 & 0.0799506 \\
+        1000    & 0.040009                     & 0.051016 & 0.0546004 \\
+        10000   & 0.015000                     & 0.020000 & 0.0249999 \\
+        100 000 & 0.005000                     & 0.010000 & 0.0049999 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+
+
+
+
 
 
 
