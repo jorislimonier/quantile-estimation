@@ -117,13 +117,16 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.toc
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT /home/joris/Documents/work/quantile_estimation/report/main.toc
-INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /home/joris/Documents/work/quantile_estimation/report/main.lof
+INPUT /home/joris/Documents/work/quantile_estimation/report/main.lof
+OUTPUT /home/joris/Documents/work/quantile_estimation/report/main.lof
 INPUT /home/joris/Documents/work/quantile_estimation/report/images/excel_data.png
 INPUT /home/joris/Documents/work/quantile_estimation/report/images/excel_data.png
 INPUT /home/joris/Documents/work/quantile_estimation/report/images/excel_data.png
