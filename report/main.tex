@@ -58,12 +58,15 @@ The data we work with is presented in figure \ref{fig: initial data} and plotted
 \label{section: bootstrap}
 We use the bootstrap to estimate the confidence in the computed quantiles, even with small to moderate sample size.
 
-Let \(n\) be the size of the data at our disposal and let \(q_k\) be the quantile we are interested in computer. Here is how we proceed:
+Let \(n\) be the size of the data at our disposal and let \(q_k\) be the quantile we want to compute. Here is how we proceed:
 \begin{enumerate}
-    \item We draw a random sample of size \(n\) with replacement from our initial data.
-    \item We compute \(q_k\) on the sample we just drew.
-    \item We repeat the process over multiple runs.
-    \item We compute the confidence intervals (details in section \ref{section: confidence intervals on the bootstrap})
+    \item Do the following \(n\) times.
+          \begin{enumerate}
+              \item Draw a random sample of size \(n\) with replacement from the initial data.
+              \item Compute \(q_k\) on the sample which has just been drawn. \label{bootstrap repeated step}
+          \end{enumerate}
+    \item Compute the mean over the collection of values resulting from step \ref{bootstrap repeated step} above.
+    \item Compute the confidence intervals (details in section \ref{section: confidence intervals on the bootstrap})
 \end{enumerate}
 
 The plots in figure \ref{fig: estimation of quantiles} show the evolution of our estimate for the value of the quantiles as we go through runs of the bootstraps. The grey areas represent the $95\%$ confidence intervals during that evolution. We will see how to get the confidence intervals from our histogram in section \ref{section: confidence intervals on the bootstrap}.
@@ -90,15 +93,6 @@ The plots in figure \ref{fig: estimation of quantiles} show the evolution of our
 
 \section{Confidence intervals on the bootstrap}
 \label{section: confidence intervals on the bootstrap}
-
-Let us fix a quantile that we call $q$ that we want to estimate. The bootstrap consists of two parts:
-
-\begin{enumerate}
-    \item[Part 1] Take a random sample from our original data, and determine its value for $q$.
-    \item[Part 2] Take all the $q$'s that have been computed for each individual sample and deduce $q$ and its confidence interval.
-\end{enumerate}\
-
-Part 1 is fairly straightforward so we will focus on the second part.
 
 \paragraph{Estimating the quantile} Our estimation of the quantile $q$ for the underlying distribution is simply computed by taking the average of all the $q$'s of each individual sample.
 
