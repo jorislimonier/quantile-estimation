@@ -65,7 +65,7 @@ Let \(n\) be the size of the data at our disposal and let \(q_k\) be the quantil
               \item Draw a random sample of size \(n\) with replacement from the initial data.
               \item Compute \(q_k\) on the sample which has just been drawn. \label{bootstrap repeated step}
           \end{enumerate}
-    \item Compute the mean over the collection of values resulting from step \ref{bootstrap repeated step} above.
+    \item Compute the mean over the set of values resulting from step \ref{bootstrap repeated step}.
     \item Compute the confidence intervals (details in section \ref{section: confidence intervals on the bootstrap})
 \end{enumerate}
 
@@ -94,51 +94,24 @@ The plots in figure \ref{fig: estimation of quantiles} show the evolution of our
 \section{Confidence intervals on the bootstrap}
 \label{section: confidence intervals on the bootstrap}
 
-\paragraph{Estimating the quantile} Our estimation of the quantile $q$ for the underlying distribution is simply computed by taking the average of all the $q$'s of each individual sample.
-
-\paragraph{Computing the confidence intervals} Let's say we want to compute the $95\%$ confidence interval. To do so, we take all the $q$'s that have been computed for each individual sample and sort them. Then we take the 0.025-th quantile as our lower bound for the confidence intervals and the 0.975-th quantile as our upper bound for the confidence intervals. \\
-As one may expect, the values 0.025 and 0.975 are found as follows:
-\[
+Let us assume that we want to compute the $95\%$ confidence interval. \\
+First, let us note the following:
+\begin{equation}
+    \label{eq: compute 0.95 CI bounds}
     \frac{1 - 0.95}{2} = 0.025 \qquad \mbox{and} \qquad 1 - \frac{(1 - 0.95)}{2} = 0.975
-\]
-where the 0.95 comes from the $95\%$ confidence interval. \\
-More generally, for a confidence level of $\gamma$ (instead of $95\%$), one has that the lower and upper bounds of the confidence interval are respectively
+\end{equation}
+
+Now we compute the $95\%$ confidence interval. First, we sort the set of all the $q$'s that have been computed for each individual sample. Then we take the 0.025-th and 0.975-th quantile respectively as our lower-bound and upper bound for the confidence intervals. \\
+More generally, for a $\gamma$-confidence interval (instead of $95\%$), one has that the lower and upper bounds of the confidence interval are respectively
 \[
     \gamma_{lo} := \frac{1 - \gamma}{2} \qquad \mbox{and} \qquad \gamma_{up} := 1 - \frac{(1 - \gamma)}{2}
 \]
 
-\section{Fine tuning}
-Let us assume that we are working with a given data set and we have no way of getting new or more reliable data. We are trying to get the quantiles as precisely as possible and with confidence intervals as small as possible.
-
-There are two parameters of the bootstrap that we can adjust to meet our goals
-\begin{enumerate}
-    \item The size of the resamples.
-    \item The number of resamples.
-\end{enumerate}\
-
-We touched on the number of resamples already in section \ref{section: bootstrap}, however we haven't dicussed the size of the resamples.
-
-What impact would increasing the size of the resamples have ? The only time it comes into play is when we take the quantiles of the resamples. Then, what would happen if we took the quantiles of a resample of different size ? Taking the quantile of a smaller resample likely means that we will have less \textit{refinement}. That is, our quantiles at each resample would likely take a smaller set of values. This is further explained by the way we proceed if we have sparse values, which is our case since we work with ``high" quantiles (where we have few values available).
 
 \textbf{According to our data}, it seems that there is close to no change in the estimation of the quantiles after $1000$ repetitions of the bootstrap. The variations are small after 500 runs already but for safety purposes we consider that we have our final guess after 1000 runs. As for the confidence intervals, only in some edge cases do we have changes past the 1000 mark. \\
 \textit{NB: Our estimate of 1000 runs is based on empirical evidence. It is not a theoretical result, however, we believe that it is suitable for engineering purposes.}
 
-% \begin{center}
-%     \begin{tabular}{|c|c|c|c|}
-%         \hline
-%                 & \multicolumn{3}{c|}{Quantile}                        \\
-%         \hline
-%                 & q3                           & q4       & q5        \\
-%         \hline
-%         100     & 0.076622                     & 0.079702 & 0.0799506 \\
-%         1000    & 0.040009                     & 0.051016 & 0.0546004 \\
-%         10000   & 0.015000                     & 0.020000 & 0.0249999 \\
-%         100 000 & 0.005000                     & 0.010000 & 0.0049999 \\
-%         \hline
-%     \end{tabular}
-% \end{center}
-
-
+The fact that our estimate seems to be stable after \(1000\) runs does not matter for the number \(1000\) itself. However, it matters because we seem to ``converge" to some value and reach a final value.
 
 
 
