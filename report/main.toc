@@ -2,5 +2,5 @@
 \contentsline {section}{\numberline {2}Bootstrap}{4}{section.2}%
 \contentsline {section}{\numberline {3}Confidence intervals on the bootstrap}{4}{section.3}%
 \contentsline {paragraph}{Estimating the quantile}{4}{section*.5}%
-\contentsline {paragraph}{Computing the confidence intervals}{6}{section*.6}%
+\contentsline {paragraph}{Computing the confidence intervals}{4}{section*.6}%
 \contentsline {section}{\numberline {4}Fine tuning}{6}{section.4}%
