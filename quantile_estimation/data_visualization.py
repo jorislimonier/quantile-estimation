@@ -12,17 +12,19 @@ class DataVisualization():
         # Create figure with secondary y-axis
         fig = make_subplots(specs=[[{"secondary_y": True}]])
         # make histogram
+        xbins = dict(start=3.6, end=10.0, size=.1)
         hist = go.Histogram(
-            x=results,
+            x=data_prep.results,
+            xbins=xbins,
             histnorm="probability",
             name="Histogram",
-            marker_color="#0f802d"
-        )
+            marker_color="#0f802d",)
         fig.add_trace(hist)
         fig.update_layout(bargroupgap=.1)  # space between bars
         if show_cdf:
             hist_cumul = go.Histogram(
                 x=results,
+                xbins=xbins,
                 histnorm="probability",
                 name="Cumul. histogram",
                 cumulative_enabled=True,

@@ -11,13 +11,9 @@ results = data_prep.results
 data_prep.data
 data_vis = DataVisualization()
 
-
-go.Figure(go.Histogram(x=data_prep.results, xbins=dict(start=3.6, end=10.0, size=.1),
-          histnorm="probability", name="Histogram", marker_color="#0f802d",)).show()
-
 bs = Bootstrap()
 boot = bs.bootstrap(bs.quantile(4), 50, results)
-data_vis.plot_histogram(results).show()
+data_vis.plot_histogram(data_prep).show()
 
 
 # data_vis.hist_bootstrap(boot).show()
@@ -37,4 +33,3 @@ data_vis.plot_histogram(results).show()
 #         data_vis.plot_moving_average(boot, .95, data_prep).show()
 
 
-print()
