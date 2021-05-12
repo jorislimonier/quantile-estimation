@@ -7,21 +7,27 @@ from quantile_estimation.bootstrap import Bootstrap
 class DataVisualization():
 
     @staticmethod
-    def plot_histogram(results, show_cdf=True):
+    def plot_histogram(data_prep, show_cdf=True):
+        results = data_prep.results
         # Create figure with secondary y-axis
         fig = make_subplots(specs=[[{"secondary_y": True}]])
         # make histogram
+        xbins = dict(
+            start=data_prep.data["Value"].min(), 
+            end=data_prep.data["Value"].max(), 
+            size=data_prep.width)
         hist = go.Histogram(
-            x=results,
+            x=data_prep.results,
+            xbins=xbins,
             histnorm="probability",
             name="Histogram",
-            marker_color="#0f802d"
-        )
+            marker_color="#0f802d",)
         fig.add_trace(hist)
         fig.update_layout(bargroupgap=.1)  # space between bars
         if show_cdf:
             hist_cumul = go.Histogram(
                 x=results,
+                xbins=xbins,
                 histnorm="probability",
                 name="Cumul. histogram",
                 cumulative_enabled=True,
