@@ -6,7 +6,7 @@ import numpy as np
 class DataPrep():
     def __init__(self):
         self.data = self.load_data()
-        self.stat = self.load()
+        # self.stat = self.load()
         self.width = self.get_width()
         self.results = self.get_results()
 
@@ -22,9 +22,9 @@ class DataPrep():
         data = data.convert_dtypes()
         return data
 
-    def load(self):
-        """getting statistics from excel file"""
-        return pd.read_excel("data/20201030_data.xlsx", sheet_name=1, header=3).iloc[:1, 12:19]
+    # def load(self):
+    #     """getting statistics from excel file"""
+    #     return pd.read_excel("data/20201030_data.xlsx", sheet_name=1, header=3).iloc[:1, 12:19]
 
     def get_width(self):
         """get bin width as variable since all bin width are the same"""

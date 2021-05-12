@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{caption}
@@ -60,7 +61,7 @@ We use the bootstrap to estimate the confidence in the computed quantiles, even 
 
 Let \(n\) be the size of the data at our disposal and let \(q_k\) be the quantile we want to compute. Here is how we proceed:
 \begin{enumerate}
-    \item Do the following \(n\) times.
+    \item Do the following \(R\) times.
           \begin{enumerate}
               \item Draw a random sample of size \(n\) with replacement from the initial data.
               \item Compute \(q_k\) on the sample which has just been drawn. \label{bootstrap repeated step}
@@ -69,7 +70,7 @@ Let \(n\) be the size of the data at our disposal and let \(q_k\) be the quantil
     \item Compute the confidence intervals (details in section \ref{section: confidence intervals on the bootstrap})
 \end{enumerate}
 
-The plots in figure \ref{fig: estimation of quantiles} show the evolution of our estimate for the value of the quantiles as we go through runs of the bootstraps. The grey areas represent the $95\%$ confidence intervals during that evolution. We will see how to get the confidence intervals from our histogram in section \ref{section: confidence intervals on the bootstrap}.
+The plots in figure \ref{fig: estimation of quantiles} show the evolution of our estimate for the value of the quantiles as we go through replicates of the bootstraps. The grey areas represent the $95\%$ confidence intervals during that evolution. We will see how to get the confidence intervals from our histogram in section \ref{section: confidence intervals on the bootstrap}.
 
 \begin{figure}
     \centering
@@ -87,7 +88,7 @@ The plots in figure \ref{fig: estimation of quantiles} show the evolution of our
         \includegraphics[width=\textwidth]{images/estimation_q5.png}
         \caption{Estimation of $q_5$}
     \end{subfigure}
-    \caption{Estimation of the quantiles over bootstrap runs}
+    \caption{Estimation of the quantiles over bootstrap replicates}
     \label{fig: estimation of quantiles}
 \end{figure}
 
@@ -108,10 +109,22 @@ More generally, for a $\gamma$-confidence interval (instead of $95\%$), one has 
 \]
 
 
-\textbf{According to our data}, it seems that there is close to no change in the estimation of the quantiles after $1000$ repetitions of the bootstrap. The variations are small after 500 runs already but for safety purposes we consider that we have our final guess after 1000 runs. As for the confidence intervals, only in some edge cases do we have changes past the 1000 mark. \\
-\textit{NB: Our estimate of 1000 runs is based on empirical evidence. It is not a theoretical result, however, we believe that it is suitable for engineering purposes.}
+\textbf{According to our data}, it seems that there is close to no change in the estimation of the quantiles after $1000$ repetitions of the bootstrap. The variations are small after 500 replicates already but for safety purposes we consider that we have our final guess after 1000 replicates. As for the confidence intervals, only in some edge cases do we have changes past the 1000 mark. \\
+The fact that our estimate seems to be stable after \(1000\) replicates does not matter for the number \(1000\) itself. However, it matters because we seem to ``converge" to some value and reach a final value.
 
-The fact that our estimate seems to be stable after \(1000\) runs does not matter for the number \(1000\) itself. However, it matters because we seem to ``converge" to some value and reach a final value.
+\textit{NB: Our estimate of 1000 replicates is based on empirical evidence. It is not a theoretical result, however, we believe that it is suitable for engineering purposes.}
+
+\textbf{According to the litterature}, that is according to Jean-Yves Le Boudec's \textit{Performance Evaluation of Computer and Communication Systems}, there exists some ``good value" for the number of bootstrap replicates \(R\). With \(\gamma\) being the confidence level, Le Boudec advises to choose \(R\) as follows
+\begin{equation}
+    R = \frac{50}{1 - \gamma} - 1
+\end{equation}
+therefore for \(\gamma = 95\% = 0.95\) we deduce that the value of \(R\) is
+
+\begin{align*}
+    R & = \frac{50}{1 - 0.95} - 1 \\
+      & = 1000 - 1                \\
+      & = 999                     \\
+\end{align*}
 
 
 
