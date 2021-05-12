@@ -1,6 +1,3 @@
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
-\contentsline {section}{\numberline {2}Bootstrap}{3}{section.2}%
-\contentsline {section}{\numberline {3}Confidence intervals on the bootstrap}{3}{section.3}%
-\contentsline {paragraph}{Estimating the quantile}{3}{section*.4}%
-\contentsline {paragraph}{Computing the confidence intervals}{3}{section*.5}%
-\contentsline {section}{\numberline {4}Fine tuning}{5}{section.4}%
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Bootstrap}{4}{section.2}%
+\contentsline {section}{\numberline {3}Confidence intervals on the bootstrap}{4}{section.3}%
