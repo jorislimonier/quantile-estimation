@@ -7,7 +7,8 @@ from quantile_estimation.bootstrap import Bootstrap
 class DataVisualization():
 
     @staticmethod
-    def plot_histogram(results, show_cdf=True):
+    def plot_histogram(data_prep, show_cdf=True):
+        results = data_prep.results
         # Create figure with secondary y-axis
         fig = make_subplots(specs=[[{"secondary_y": True}]])
         # make histogram
