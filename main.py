@@ -8,7 +8,6 @@ file_name = "20210417_data_VD2.ods"
 sheet_name = "24s"
 data_prep = DataPrep(file_name, sheet_name)
 results = data_prep.results
-data_prep.data
 data_vis = DataVisualization()
 
 bs = Bootstrap()

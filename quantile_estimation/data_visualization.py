@@ -12,7 +12,10 @@ class DataVisualization():
         # Create figure with secondary y-axis
         fig = make_subplots(specs=[[{"secondary_y": True}]])
         # make histogram
-        xbins = dict(start=3.6, end=10.0, size=.1)
+        xbins = dict(
+            start=data_prep.data["Value"].min(), 
+            end=data_prep.data["Value"].max(), 
+            size=data_prep.width)
         hist = go.Histogram(
             x=data_prep.results,
             xbins=xbins,
