@@ -4,17 +4,22 @@ from quantile_estimation.data_prep import DataPrep
 from quantile_estimation.data_visualization import DataVisualization
 from quantile_estimation.bootstrap import Bootstrap
 
-file_name = "20210417_data_VD2.ods"
-sheet_name = "24s"
-data_prep = DataPrep(file_name, sheet_name)
-results = data_prep.results
-data_vis = DataVisualization()
+file_names = ["20210417_data_CC1.ods", "20210417_data_TFTP4.ods", "20210417_data_VD2.ods"]
+sheet_names = ["24s", "4min", "40min", "400min"]
 
-bs = Bootstrap()
-boot = bs.bootstrap(bs.quantile(4), 50, results)
-data_vis.plot_histogram(data_prep).show()
+for file_name in file_names:
+    for sheet_name in sheet_names:
+        data_prep = DataPrep(file_name, sheet_name)
+        results = data_prep.results
+        print(file_name, sheet_name, len(results))
 
+        data_vis = DataVisualization()
+        data_vis.plot_histogram(data_prep).show()
 
+        
+
+# bs = Bootstrap()
+# boot = bs.bootstrap(bs.quantile(4), 50, results)
 # data_vis.hist_bootstrap(boot).show()
 # data_vis.plot_moving_average(boot, .95, data_prep).show()
 
@@ -30,5 +35,4 @@ data_vis.plot_histogram(data_prep).show()
 #         print(f"{resample_size}: ", ci, ci[1] - ci[0])
 #         data_vis.hist_bootstrap(boot).show()
 #         data_vis.plot_moving_average(boot, .95, data_prep).show()
-
 

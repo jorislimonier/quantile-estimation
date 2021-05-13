@@ -5,7 +5,6 @@ from quantile_estimation.bootstrap import Bootstrap
 
 
 class DataVisualization():
-
     @staticmethod
     def plot_histogram(data_prep, show_cdf=True):
         results = data_prep.results
@@ -13,8 +12,8 @@ class DataVisualization():
         fig = make_subplots(specs=[[{"secondary_y": True}]])
         # make histogram
         xbins = dict(
-            start=data_prep.data["Value"].min(), 
-            end=data_prep.data["Value"].max(), 
+            start=data_prep.data["Value"].min(),
+            end=data_prep.data["Value"].max(),
             size=data_prep.width)
         hist = go.Histogram(
             x=data_prep.results,
