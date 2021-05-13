@@ -5,7 +5,9 @@ from quantile_estimation.data_visualization import DataVisualization
 from quantile_estimation.bootstrap import Bootstrap
 
 file_names = ["20210417_data_CC1.ods", "20210417_data_TFTP4.ods", "20210417_data_VD2.ods"]
+# file_names = [file_names[1]]
 sheet_names = ["24s", "4min", "40min", "400min"]
+# sheet_names = ["24s"]
 
 for file_name in file_names:
     for sheet_name in sheet_names:
@@ -17,9 +19,10 @@ for file_name in file_names:
         data_vis.plot_histogram(data_prep).show()
 
         
+bs = Bootstrap(k=4, nb_replicates=50, results=results)
+boot = bs.bootstrap()
+boot
 
-# bs = Bootstrap()
-# boot = bs.bootstrap(bs.quantile(4), 50, results)
 # data_vis.hist_bootstrap(boot).show()
 # data_vis.plot_moving_average(boot, .95, data_prep).show()
 

@@ -29,11 +29,11 @@
 \section{Introduction}
 In this project we want to estimate the confidence we have when computing various quantiles. This task may be fairly straightforward when working with known distributions or arbitrary amounts of data but this seldom occurs in engineering or other real world applications. For this reason, here we try to accomplish that task on an unknown distribution and given limited amounts of data.
 
-We define the n-th quantile as follows:
+We define the \(k\)-th quantile as follows:
 \begin{equation}
-    q_n := 1 - 10^{-n}
+    q_k := 1 - 10^{-k}
 \end{equation}
-which gives $q_1 = 0.9$, $q_2 = 0.99$ ...etc. Where, simply speaking, $q_n$ represents ``0" followed by $n$ nines. For our applications, we are mostly interested in $q_3, q_4$ and $q_5$.
+which gives $q_1 = 0.9$, $q_2 = 0.99$ ...etc. Where, simply speaking, $q_k$ represents ``0" followed by $n$ nines. For our applications, we are mostly interested in $q_3, q_4$ and $q_5$.
 
 The data we work with is presented in figure \ref{fig: initial data} and plotted in the histogram in figure \ref{fig: visual representation of the initial data}.
 

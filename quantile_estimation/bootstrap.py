@@ -2,21 +2,22 @@ import numpy as np
 from sklearn.utils import resample
 
 class Bootstrap():
-    def __init__(self):
-        return
+    def __init__(self, k, nb_replicates, results):
+        self.kth_quantile = self.quantile(k)
+        self.nb_replicates = nb_replicates
+        self.results = results
 
     @staticmethod
     def quantile(k):
         """Get quantile of k zeros"""
         return 1 - 10**(-k)
 
-    @staticmethod
-    def bootstrap(quantile, nb_resample, results, random_state=None):
+    def bootstrap(self, random_state=None):
         """takes the q quantile from a resample of the results, repeats n times"""
         boot = np.array([])
-        for _ in range(nb_resample):
-            r = resample(results, random_state=random_state)
-            r_quantile = np.quantile(r, quantile, interpolation="linear")
+        for _ in range(self.nb_replicates):
+            r = resample(self.results, random_state=random_state)
+            r_quantile = np.quantile(r, self.kth_quantile, interpolation="linear")
             boot = np.append(boot, r_quantile)
         return boot
 
