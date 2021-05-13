@@ -29,7 +29,7 @@ class DataVisualization():
                 histnorm="probability",
                 name="Cumul. histogram",
                 cumulative_enabled=True,
-                opacity=.25,
+                opacity=.3,
             )
             fig.add_trace(hist_cumul, secondary_y=True)
         return fig
@@ -61,7 +61,7 @@ class DataVisualization():
                                 for first_res in first_resamples]
         # figure of moving average
         fig = go.Figure()
-        ci_bounds = [bootstrap.ci_bounds
+        ci_bounds = [bootstrap.compute_ci_bounds(first_res)
                      for first_res in first_resamples]
         fig.add_trace(go.Scatter(y=mean_first_resamples, name="estimation",))
         scatter_ci_upper = go.Scatter(
