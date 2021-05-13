@@ -1,7 +1,6 @@
 import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots  # used for secondary y-axis
-from quantile_estimation.bootstrap import Bootstrap
 
 
 class DataVisualization():
@@ -13,7 +12,7 @@ class DataVisualization():
         # make histogram
         xbins = dict(
             start=data_prep.data["Value"].min(),
-            end=data_prep.data["Value"].max(),
+            end=data_prep.data["Value"].max() + data_prep.width,
             size=data_prep.width)
         hist = go.Histogram(
             x=data_prep.results,
@@ -36,12 +35,12 @@ class DataVisualization():
         return fig
 
     @staticmethod
-    def hist_bootstrap(boot):
+    def hist_bootstrap(bootstrap):
         """takes an array with results from the bootstrap
         draws a histogram of the quantile value from the bootstrap"""
         fig = make_subplots()
-        xbins = go.histogram.XBins(size=0.001)
-        hist = go.Histogram(x=boot, xbins=xbins)  # , xbins=xbins)
+        hist = go.Histogram(x=bootstrap.bootstrap,
+                            )
         fig.add_trace(hist)
         fig.update_layout(
             title="Values of the quantile over all runs",
@@ -52,16 +51,17 @@ class DataVisualization():
         return fig
 
     @staticmethod
-    def plot_moving_average(boot, confidence_level, data_prep):
+    def plot_moving_average(bootstrap):
         """plots the evolution of the quantile
-        measure in boot"""
+        measure in `bootstrap`"""
         # the i-th element is an array with first i elements of boot
-        first_resamples = [boot[:i] for i in range(1, len(boot)+1)]
+        boot_val = bootstrap.bootstrap
+        first_resamples = [boot_val[:i] for i in range(1, len(boot_val)+1)]
         mean_first_resamples = [np.mean(first_res)
                                 for first_res in first_resamples]
         # figure of moving average
         fig = go.Figure()
-        ci_bounds = [Bootstrap.get_ci_bounds(first_res, confidence_level)
+        ci_bounds = [bootstrap.ci_bounds
                      for first_res in first_resamples]
         fig.add_trace(go.Scatter(y=mean_first_resamples, name="estimation",))
         scatter_ci_upper = go.Scatter(
