@@ -39,6 +39,10 @@ class DataVisualization():
         """takes an array with results from the bootstrap
         draws a histogram of the quantile value from the bootstrap"""
         fig = make_subplots()
+        # xbins = dict(
+        #     start=2,
+        #     end= ,
+        #     size=)
         hist = go.Histogram(x=bootstrap.bootstrap,
                             )
         fig.add_trace(hist)
