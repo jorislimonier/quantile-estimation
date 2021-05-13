@@ -14,7 +14,7 @@ class DataPrep():
         the data is supposed to be in the data folder"""
         cwd = os.getcwd()
         data = pd.read_excel(cwd + "/data/" + file_name,
-                                sheet_name=sheet_name)
+                             sheet_name=sheet_name)
         data.columns = data.iloc[1]
         data = data.iloc[2:]
         data = data.reset_index(drop=True)
@@ -32,5 +32,3 @@ class DataPrep():
         """generate repeated results from data"""
         results = np.repeat(self.data["Value"], self.data["Count"])
         return np.array(results) + (self.width / 2)
-
-
