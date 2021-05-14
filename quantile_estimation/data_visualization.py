@@ -13,15 +13,22 @@ class DataVisualization():
         xbins = dict(
             start=data_prep.data["Value"].min(),
             end=data_prep.data["Value"].max() + data_prep.width,
-            size=data_prep.width)
+            size=data_prep.width
+        )
         hist = go.Histogram(
             x=data_prep.results,
             xbins=xbins,
             histnorm="probability",
             name="Histogram",
-            marker_color="#0f802d",)
+            marker_color="#0f802d",
+        )
         fig.add_trace(hist)
-        fig.update_layout(bargroupgap=.1)  # space between bars
+        fig.update_layout(
+            bargroupgap=.1,  # space between bars
+            title=f"Distribution of the durations after {data_prep.sheet_name} of simulation",
+            xaxis_title="Duration",
+            yaxis_title="Number of occurences",
+        )
         if show_cdf:
             hist_cumul = go.Histogram(
                 x=results,
@@ -39,15 +46,10 @@ class DataVisualization():
         """takes an array with results from the bootstrap
         draws a histogram of the quantile value from the bootstrap"""
         fig = make_subplots()
-        # xbins = dict(
-        #     start=2,
-        #     end= ,
-        #     size=)
-        hist = go.Histogram(x=bootstrap.bootstrap,
-                            )
+        hist = go.Histogram(x=bootstrap.bootstrap,)
         fig.add_trace(hist)
         fig.update_layout(
-            title="Values of the quantile over all runs",
+            title="Values of the quantile over all bootstrap replicates",
             xaxis_title="Value of the quantile",
             yaxis_title="Number of occurences",
             bargap=.05
@@ -67,28 +69,34 @@ class DataVisualization():
         fig = go.Figure()
         ci_bounds = [bootstrap.compute_ci_bounds(first_res)
                      for first_res in first_resamples]
-        fig.add_trace(go.Scatter(y=mean_first_resamples, name="estimation",))
+        fig.add_trace(
+            go.Scatter(
+                y=mean_first_resamples, 
+                name="estimation",
+                marker_color="#921b96",
+                line_width=4,
+            )
+        )
         scatter_ci_upper = go.Scatter(
             name="Upper Bound",
             y=[bound[1] for bound in ci_bounds],
             showlegend=False,
             marker=dict(color="#444"),
             line=dict(width=0),
-            fillcolor='rgba(68, 68, 68, 0.3)'
         )
         scatter_ci_lower = go.Scatter(
-            name="Lower Bound",
+            name="Confidence interval",
             y=[bound[0] for bound in ci_bounds],
             fill="tonexty",
-            showlegend=False,
+            # showlegend=False,
             marker=dict(color="#444"),
             line=dict(width=0),
-            fillcolor='rgba(68, 68, 68, 0.3)'
+            fillcolor='rgba(217, 82, 82, 0.3)'
         )
         fig.add_trace(scatter_ci_upper)
         fig.add_trace(scatter_ci_lower)
         fig.update_layout(
-            xaxis_title="Number of runs",
+            xaxis_title="Number of runs completed",
             yaxis_title="Value of the quantile",
             showlegend=True
         )

@@ -5,6 +5,8 @@ import numpy as np
 
 class DataPrep():
     def __init__(self, file_name, sheet_name):
+        self.file_name = file_name
+        self.sheet_name = sheet_name
         self.data = self.load_data(file_name, sheet_name)
         self.width = self.get_width()
         self.results = self.get_results()
