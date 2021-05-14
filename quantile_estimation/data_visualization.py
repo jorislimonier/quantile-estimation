@@ -25,7 +25,7 @@ class DataVisualization():
         fig.add_trace(hist)
         fig.update_layout(
             bargroupgap=.1,  # space between bars
-            title="Distribution of the durations after 24s of simulation",
+            title=f"Distribution of the durations after {data_prep.sheet_name} of simulation",
             xaxis_title="Duration",
             yaxis_title="Number of occurences",
         )

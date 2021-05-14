@@ -6,7 +6,7 @@ file_names = ["20210417_data_CC1.ods",
               "20210417_data_TFTP4.ods", "20210417_data_VD2.ods"]
 file_names = [file_names[0]]
 sheet_names = ["24s", "4min", "40min", "400min"]
-sheet_names = [sheet_names[0]]
+sheet_names = [sheet_names[1]]
 
 for sheet_name in sheet_names:
     for file_name in file_names:
