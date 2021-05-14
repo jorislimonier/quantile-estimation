@@ -6,6 +6,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{multirow}
+\usepackage{multicol}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks  = true,
@@ -14,12 +15,26 @@
     urlcolor    = blue,
 }
 
-\title{Bootstrap for quantiles estimation.\vfill}
-\author{\textit{Written by:} Joris LIMONIER,\\\textit{Supervised by:} Nicolas NAVET \vspace{13cm}}
-\date{February - May 2021}
+\title{
+    \huge{Bootstrap for quantiles estimation}
+    \vspace{1cm}
+}
+\author{
+    \begin{tabular}{cc}
+        \textit{Author:} & \textit{Supervisor:} \\[.2cm]
+        Joris Limonier & Nicolas Navet \\
+        \textit{University of Luxembourg} & \textit{University of Luxembourg} \\
+        \href{mailto:joris.limonier.001@student.uni.lu}{joris.limonier.001@student.uni.lu} & \href{mailto:nicolas.navet@uni.lu}{nicolas.navet@uni.lu}
+    \end{tabular}
+    }
+    \date{
+        \vfill
+        February - May 2021
+}
 
 \begin{document}
 \maketitle
+\thispagestyle{empty}
 
 \newpage
 \tableofcontents
@@ -33,6 +48,7 @@ We define the \(k\)-th quantile as follows:
 \begin{equation}
     q_k := 1 - 10^{-k}
 \end{equation}
+
 which gives $q_1 = 0.9$, $q_2 = 0.99$ ...etc. Where, simply speaking, $q_k$ represents ``0" followed by $n$ nines. For our applications, we are mostly interested in $q_3, q_4$ and $q_5$.
 
 The data we work with is presented in figure \ref{fig: initial data} and plotted in the histogram in figure \ref{fig: visual representation of the initial data}.
@@ -109,7 +125,7 @@ More generally, for a $\gamma$-confidence interval (instead of $95\%$), one has 
 \]
 
 
-\textbf{According to our data}, it seems that there is close to no change in the estimation of the quantiles after $1000$ repetitions of the bootstrap. The variations are small after 500 replicates already but for safety purposes we consider that we have our final guess after 1000 replicates. As for the confidence intervals, only in some edge cases do we have changes past the 1000 mark. \\
+\textbf{According to our data}, it seems that there is close to no change in the estimation of the quantiles after $1000$ replications of the bootstrap. The variations are small after 500 replicates already but for safety purposes we consider that we have our final guess after 1000 replicates. As for the confidence intervals, only in some edge cases do we have changes past the 1000 mark. \\
 The fact that our estimate seems to be stable after \(1000\) replicates does not matter for the number \(1000\) itself. However, it matters because we seem to ``converge" to some value and reach a final value.
 
 \textit{NB: Our estimate of 1000 replicates is based on empirical evidence. It is not a theoretical result, however, we believe that it is suitable for engineering purposes.}
@@ -126,9 +142,18 @@ therefore for \(\gamma = 95\% = 0.95\) we deduce that the value of \(R\) is
       & = 999                     \\
 \end{align*}
 
+We find that our estimates verifies Le Boudec's result (1000 compared to 999).
 
 \newpage
 \appendix
 \section{Supplementary tests on other datasets}
+
+To verify our approach and make sure that it generalises well, we test it on other datasets.
+
+
+
+
+
+
 
 \end{document}
