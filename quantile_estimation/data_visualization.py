@@ -34,7 +34,7 @@ class DataVisualization():
                 x=results,
                 xbins=xbins,
                 histnorm="probability",
-                name="Cumul. histogram",
+                name="Cumulative histogram",
                 cumulative_enabled=True,
                 opacity=.3,
             )

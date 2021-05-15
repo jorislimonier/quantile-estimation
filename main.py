@@ -15,8 +15,12 @@ for sheet_name in sheet_names:
         print(file_name, sheet_name, len(results))
 
         data_vis = DataVisualization()
-        data_vis.plot_histogram(data_prep).show()
-        boot = Bootstrap(k=4, results=results, confidence_level=.95)
-        data_vis.hist_bootstrap(boot).show()
-        data_vis.plot_moving_average(boot).show()
+        data_vis.plot_histogram(data_prep).write_html("fig/test.html", auto_open=True)
+        # boot = Bootstrap(k=4, results=results, confidence_level=.95)
+        # data_vis.hist_bootstrap(boot).show()
+        # data_vis.plot_moving_average(boot).show()
 
+
+# import plotly.graph_objects as go
+
+# help(go.Figure.write_html)
