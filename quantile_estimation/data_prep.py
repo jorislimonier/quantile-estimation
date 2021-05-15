@@ -7,18 +7,19 @@ class DataPrep():
     def __init__(self, file_name, sheet_name):
         self.file_name = file_name
         self.sheet_name = sheet_name
-        self.data = self.load_data(file_name, sheet_name)
+        self.data = self.load_data()
         self.width = self.get_width()
         self.results = self.get_results()
 
-    def load_data(self, file_name, sheet_name):
+    def load_data(self):
         """getting data from excel file
         the data is supposed to be in the data folder"""
         cwd = os.getcwd()
-        data = pd.read_excel(cwd + "/data/" + file_name,
-                             sheet_name=sheet_name)
-        data.columns = data.iloc[1]
-        data = data.iloc[2:]
+        data = pd.read_excel(cwd + "/data/" + self.file_name, sheet_name=self.sheet_name, header=None)
+        self.sim_time, self.priority, _ = data.iloc[0, 0].split(" ")
+        self.protocol = data.iloc[1, 0]
+        data.columns = data.iloc[2]
+        data = data.iloc[3:]
         data = data.reset_index(drop=True)
         data.columns.name = None
         data = data.convert_dtypes()
