@@ -21,6 +21,3 @@ for sheet_name in sheet_names:
         # data_vis.plot_moving_average(boot).show()
 
 
-# import plotly.graph_objects as go
-
-# help(go.Figure.write_html)
