@@ -4,6 +4,7 @@ from sklearn.utils import resample
 
 class Bootstrap():
     def __init__(self, k, results, confidence_level):
+        self.k = k
         self.kth_quantile = self.quantile(k)
         self.results = results
         self.confidence_level = confidence_level
