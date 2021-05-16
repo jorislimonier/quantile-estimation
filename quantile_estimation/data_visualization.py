@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots  # used for secondary y-axis
 
 
-class DataVisualization():
+class DataVisualization:
     @staticmethod
     def plot_histogram(data_prep, show_cdf=True):
         results = data_prep.results
@@ -13,7 +13,7 @@ class DataVisualization():
         xbins = dict(
             start=data_prep.data["Value"].min(),
             end=data_prep.data["Value"].max() + data_prep.width,
-            size=data_prep.width
+            size=data_prep.width,
         )
         hist = go.Histogram(
             x=data_prep.results,
@@ -24,7 +24,7 @@ class DataVisualization():
         )
         fig.add_trace(hist)
         fig.update_layout(
-            bargroupgap=.1,  # space between bars
+            bargroupgap=0.1,  # space between bars
             title=f"Distribution of the durations after {data_prep.sim_time} of simulation for {data_prep.protocol}",
             xaxis_title="Duration",
             yaxis_title="Number of occurences",
@@ -36,7 +36,7 @@ class DataVisualization():
                 histnorm="probability",
                 name="Cumulative histogram",
                 cumulative_enabled=True,
-                opacity=.3,
+                opacity=0.3,
             )
             fig.add_trace(hist_cumul, secondary_y=True)
         return fig
@@ -46,13 +46,15 @@ class DataVisualization():
         """takes an array with results from the bootstrap
         draws a histogram of the quantile value from the bootstrap"""
         fig = make_subplots()
-        hist = go.Histogram(x=bootstrap.bootstrap,)
+        hist = go.Histogram(
+            x=bootstrap.bootstrap,
+        )
         fig.add_trace(hist)
         fig.update_layout(
             title="Values of the quantile over all bootstrap replicates",
             xaxis_title="Value of the quantile",
             yaxis_title="Number of occurences",
-            bargap=.05
+            bargap=0.05,
         )
         return fig
 
@@ -62,16 +64,16 @@ class DataVisualization():
         measure in `bootstrap`"""
         # the i-th element is an array with first i elements of boot
         boot_val = bootstrap.bootstrap
-        first_resamples = [boot_val[:i] for i in range(1, len(boot_val)+1)]
-        mean_first_resamples = [np.mean(first_res)
-                                for first_res in first_resamples]
+        first_resamples = [boot_val[:i] for i in range(1, len(boot_val) + 1)]
+        mean_first_resamples = [np.mean(first_res) for first_res in first_resamples]
         # figure of moving average
         fig = go.Figure()
-        ci_bounds = [bootstrap.compute_ci_bounds(first_res)
-                     for first_res in first_resamples]
+        ci_bounds = [
+            bootstrap.compute_ci_bounds(first_res) for first_res in first_resamples
+        ]
         fig.add_trace(
             go.Scatter(
-                y=mean_first_resamples, 
+                y=mean_first_resamples,
                 name="estimation",
                 marker_color="#921b96",
                 line_width=4,
@@ -91,13 +93,13 @@ class DataVisualization():
             # showlegend=False,
             marker=dict(color="#444"),
             line=dict(width=0),
-            fillcolor='rgba(217, 82, 82, 0.3)'
+            fillcolor="rgba(217, 82, 82, 0.3)",
         )
         fig.add_trace(scatter_ci_upper)
         fig.add_trace(scatter_ci_lower)
         fig.update_layout(
             xaxis_title="Number of runs completed",
             yaxis_title="Value of the quantile",
-            showlegend=True
+            showlegend=True,
         )
         return fig
