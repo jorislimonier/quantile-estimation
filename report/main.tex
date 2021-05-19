@@ -144,12 +144,21 @@ therefore for \(\gamma = 95\% = 0.95\) we deduce that the value of \(R\) is
 
 We find that our estimates verifies Le Boudec's result (1000 compared to 999).
 
+
+\section{Conclusion}
+
+The in-depth study in the main body of this article, as well as the supplementary tests provided in appendix \ref{app: supplementary tests on other datasets} show a wide variety in the amounts of data at our disposal. The simulation times are 24 seconds, 4 minutes, 40 minutes and 400 minutes; in other words, 24 seconds times powers of 10, which gives an overview over multiple orders of magnitude. The number of data points ranges from a mere 1355 to almost 24 000 000 depending on the simulation time and the test case. The distributions themselves are very different too, some have well-spread values while others are very narrowly concentrated. As a result, we get some fairly contrasted results.
+
+We notice that simulation times of 24 seconds appear too short and the results usually get better for 4, 40 and 400 minutes. However, and this is more surprising, in some cases, 400 minutes of simulation appear to yield worse results than 4 or 40 minutes (figure \ref{fig: TFTP4 DAT q3 400 min} for example). Having few cases makes it hard to state whether this is an edge case or a general trend. However, besides some rare cases (such as figure \ref{fig: VD2 DAT q4 400 min}), the improvements between 40 and 400 minutes of simulation time do not seem substantial. On the other hand, performing the bootstrap on an order of magnitude more data points takes a far greater time. A vast portion of the runtime was dedicated to performing the bootstrap on the 400 minutes simulation times (about half of the total $\approx 48$ hours runtime on an 8-core i7-4710HQ CPU at 2.50GHz). In conclusion, it appears from our data that 4 to 40 minutes of simulation yields the best performance compared to runtime.
+
+
 \newpage
 \appendix
 \section{Supplementary tests on other datasets}
+\label{app: supplementary tests on other datasets}
 To verify our approach and make sure that it generalises well, we test it on other datasets.
 
-\subsection{CC1: CAM2 to ECU2}
+\subsection{CC1: CAM2 - ECU2}
 \subsubsection{Data}
 
 \begin{figure}[H]
@@ -176,7 +185,7 @@ To verify our approach and make sure that it generalises well, we test it on oth
         \includegraphics[width=\textwidth]{../fig/data/CC1: CAM2 --> ECU2_400mn.png}
         \caption{Simulation time: 400min}
     \end{subfigure}
-    \caption{CC1: CAM2 to ECU2 data after multiple simulation times}
+    \caption{CC1: CAM2 - ECU2 data after multiple simulation times}
 \end{figure}
 
 \subsubsection{Quantile 3}
@@ -204,7 +213,7 @@ To verify our approach and make sure that it generalises well, we test it on oth
         \includegraphics[width=\textwidth]{../fig/quantile3/CC1: CAM2 --> ECU2_400mn.png}
         \caption{Simulation time: 400min}
     \end{subfigure}
-    \caption{CC1: CAM2 to ECU2 $q_3$ after multiple simulation times}
+    \caption{CC1: CAM2 - ECU2 $q_3$ after multiple simulation times}
 \end{figure}
 
 \subsubsection{Quantile 4}
@@ -232,7 +241,7 @@ To verify our approach and make sure that it generalises well, we test it on oth
         \includegraphics[width=\textwidth]{../fig/quantile4/CC1: CAM2 --> ECU2_400mn.png}
         \caption{Simulation time: 400min}
     \end{subfigure}
-    \caption{CC1: CAM2 to ECU2 $q_4$ after multiple simulation times}
+    \caption{CC1: CAM2 - ECU2 $q_4$ after multiple simulation times}
 \end{figure}
 
 \subsubsection{Quantile 5}
@@ -260,7 +269,7 @@ To verify our approach and make sure that it generalises well, we test it on oth
         \includegraphics[width=\textwidth]{../fig/quantile5/CC1: CAM2 --> ECU2_400mn.png}
         \caption{Simulation time: 400min}
     \end{subfigure}
-    \caption{CC1: CAM2 to ECU2 $q_5$ after multiple simulation times}
+    \caption{CC1: CAM2 - ECU2 $q_5$ after multiple simulation times}
 \end{figure}
 
 
@@ -319,6 +328,7 @@ To verify our approach and make sure that it generalises well, we test it on oth
         \centering
         \includegraphics[width=\textwidth]{../fig/quantile3/TFTP4 DAT_400mn.png}
         \caption{Simulation time: 400min}
+        \label{fig: TFTP4 DAT q3 400 min}
     \end{subfigure}
     \caption{TFTP4 DAT $q_3$ after multiple simulation times}
 \end{figure}
@@ -463,6 +473,7 @@ To verify our approach and make sure that it generalises well, we test it on oth
         \centering
         \includegraphics[width=\textwidth]{../fig/quantile4/VD2_400mn.png}
         \caption{Simulation time: 400min}
+        \label{fig: VD2 DAT q4 400 min}
     \end{subfigure}
     \caption{VD2 $q_4$ after multiple simulation times}
 \end{figure}
@@ -494,7 +505,6 @@ To verify our approach and make sure that it generalises well, we test it on oth
     \end{subfigure}
     \caption{VD2 $q_5$ after multiple simulation times}
 \end{figure}
-
 
 
 
