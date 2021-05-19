@@ -147,10 +147,353 @@ We find that our estimates verifies Le Boudec's result (1000 compared to 999).
 \newpage
 \appendix
 \section{Supplementary tests on other datasets}
-
 To verify our approach and make sure that it generalises well, we test it on other datasets.
 
+\subsection{CC1: CAM2 to ECU2}
+\subsubsection{Data}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/CC1: CAM2 --> ECU2_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/CC1: CAM2 --> ECU2_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/CC1: CAM2 --> ECU2_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/CC1: CAM2 --> ECU2_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{CC1: CAM2 to ECU2 data after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 3}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/CC1: CAM2 --> ECU2_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/CC1: CAM2 --> ECU2_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/CC1: CAM2 --> ECU2_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/CC1: CAM2 --> ECU2_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{CC1: CAM2 to ECU2 $q_3$ after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 4}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/CC1: CAM2 --> ECU2_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/CC1: CAM2 --> ECU2_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/CC1: CAM2 --> ECU2_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/CC1: CAM2 --> ECU2_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{CC1: CAM2 to ECU2 $q_4$ after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 5}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/CC1: CAM2 --> ECU2_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/CC1: CAM2 --> ECU2_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/CC1: CAM2 --> ECU2_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/CC1: CAM2 --> ECU2_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{CC1: CAM2 to ECU2 $q_5$ after multiple simulation times}
+\end{figure}
+
+
+
+\subsection{TFTP4 DAT}
+\subsubsection{Data}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/TFTP4_DAT_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/TFTP4 DAT_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/TFTP4 DAT_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/TFTP4 DAT_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{TFTP4 DAT data after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 3}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/TFTP4_DAT_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/TFTP4 DAT_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/TFTP4 DAT_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/TFTP4 DAT_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{TFTP4 DAT $q_3$ after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 4}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/TFTP4_DAT_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/TFTP4 DAT_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/TFTP4 DAT_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/TFTP4 DAT_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{TFTP4 DAT $q_4$ after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 5}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/TFTP4_DAT_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/TFTP4 DAT_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/TFTP4 DAT_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/TFTP4 DAT_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{TFTP4 DAT $q_5$ after multiple simulation times}
+\end{figure}
+
+
+
+\subsection{VD2}
+\subsubsection{Data}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/VD2_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/VD2_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/VD2_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/data/VD2_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{VD2 data after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 3}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/VD2_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/VD2_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/VD2_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile3/VD2_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{VD2 $q_3$ after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 4}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/VD2_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/VD2_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/VD2_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile4/VD2_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{VD2 $q_4$ after multiple simulation times}
+\end{figure}
+
+\subsubsection{Quantile 5}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/VD2_24s.png}
+        \caption{Simulation time: 24s}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/VD2_4mn.png}
+        \caption{Simulation time: 4min}
+        \vspace{.5cm}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/VD2_40mn.png}
+        \caption{Simulation time: 40min}
+    \end{subfigure}
+    \begin{subfigure}{.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../fig/quantile5/VD2_400mn.png}
+        \caption{Simulation time: 400min}
+    \end{subfigure}
+    \caption{VD2 $q_5$ after multiple simulation times}
+\end{figure}
 
 
 
