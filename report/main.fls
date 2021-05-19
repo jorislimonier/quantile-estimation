@@ -140,11 +140,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.toc
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 OUTPUT /home/joris/Documents/work/quantile_estimation/report/main.toc
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.lof
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.lof
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 OUTPUT /home/joris/Documents/work/quantile_estimation/report/main.lof
 INPUT /home/joris/Documents/work/quantile_estimation/report/images/excel_data.png
 INPUT /home/joris/Documents/work/quantile_estimation/report/images/excel_data.png
@@ -166,6 +166,151 @@ INPUT /home/joris/Documents/work/quantile_estimation/report/images/estimation_q5
 INPUT /home/joris/Documents/work/quantile_estimation/report/images/estimation_q5.png
 INPUT /home/joris/Documents/work/quantile_estimation/report/images/estimation_q5.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/CC1: CAM2 --> ECU2_24s.png
+INPUT ../fig/data/CC1: CAM2 --> ECU2_24s.png
+INPUT ../fig/data/CC1: CAM2 --> ECU2_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/CC1: CAM2 --> ECU2_4mn.png
+INPUT ../fig/data/CC1: CAM2 --> ECU2_4mn.png
+INPUT ../fig/data/CC1: CAM2 --> ECU2_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/CC1: CAM2 --> ECU2_40mn.png
+INPUT ../fig/data/CC1: CAM2 --> ECU2_40mn.png
+INPUT ../fig/data/CC1: CAM2 --> ECU2_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/CC1: CAM2 --> ECU2_400mn.png
+INPUT ../fig/data/CC1: CAM2 --> ECU2_400mn.png
+INPUT ../fig/data/CC1: CAM2 --> ECU2_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/CC1: CAM2 --> ECU2_24s.png
+INPUT ../fig/quantile3/CC1: CAM2 --> ECU2_24s.png
+INPUT ../fig/quantile3/CC1: CAM2 --> ECU2_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/CC1: CAM2 --> ECU2_4mn.png
+INPUT ../fig/quantile3/CC1: CAM2 --> ECU2_4mn.png
+INPUT ../fig/quantile3/CC1: CAM2 --> ECU2_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/CC1: CAM2 --> ECU2_40mn.png
+INPUT ../fig/quantile3/CC1: CAM2 --> ECU2_40mn.png
+INPUT ../fig/quantile3/CC1: CAM2 --> ECU2_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/CC1: CAM2 --> ECU2_400mn.png
+INPUT ../fig/quantile3/CC1: CAM2 --> ECU2_400mn.png
+INPUT ../fig/quantile3/CC1: CAM2 --> ECU2_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/CC1: CAM2 --> ECU2_24s.png
+INPUT ../fig/quantile4/CC1: CAM2 --> ECU2_24s.png
+INPUT ../fig/quantile4/CC1: CAM2 --> ECU2_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/CC1: CAM2 --> ECU2_4mn.png
+INPUT ../fig/quantile4/CC1: CAM2 --> ECU2_4mn.png
+INPUT ../fig/quantile4/CC1: CAM2 --> ECU2_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/CC1: CAM2 --> ECU2_40mn.png
+INPUT ../fig/quantile4/CC1: CAM2 --> ECU2_40mn.png
+INPUT ../fig/quantile4/CC1: CAM2 --> ECU2_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/CC1: CAM2 --> ECU2_400mn.png
+INPUT ../fig/quantile4/CC1: CAM2 --> ECU2_400mn.png
+INPUT ../fig/quantile4/CC1: CAM2 --> ECU2_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/CC1: CAM2 --> ECU2_24s.png
+INPUT ../fig/quantile5/CC1: CAM2 --> ECU2_24s.png
+INPUT ../fig/quantile5/CC1: CAM2 --> ECU2_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/CC1: CAM2 --> ECU2_4mn.png
+INPUT ../fig/quantile5/CC1: CAM2 --> ECU2_4mn.png
+INPUT ../fig/quantile5/CC1: CAM2 --> ECU2_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/CC1: CAM2 --> ECU2_40mn.png
+INPUT ../fig/quantile5/CC1: CAM2 --> ECU2_40mn.png
+INPUT ../fig/quantile5/CC1: CAM2 --> ECU2_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/CC1: CAM2 --> ECU2_400mn.png
+INPUT ../fig/quantile5/CC1: CAM2 --> ECU2_400mn.png
+INPUT ../fig/quantile5/CC1: CAM2 --> ECU2_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/TFTP4_DAT_24s.png
+INPUT ../fig/data/TFTP4_DAT_24s.png
+INPUT ../fig/data/TFTP4_DAT_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/TFTP4 DAT_4mn.png
+INPUT ../fig/data/TFTP4 DAT_4mn.png
+INPUT ../fig/data/TFTP4 DAT_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/TFTP4 DAT_40mn.png
+INPUT ../fig/data/TFTP4 DAT_40mn.png
+INPUT ../fig/data/TFTP4 DAT_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/TFTP4 DAT_400mn.png
+INPUT ../fig/data/TFTP4 DAT_400mn.png
+INPUT ../fig/data/TFTP4 DAT_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/TFTP4_DAT_24s.png
+INPUT ../fig/quantile3/TFTP4_DAT_24s.png
+INPUT ../fig/quantile3/TFTP4_DAT_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/TFTP4 DAT_4mn.png
+INPUT ../fig/quantile3/TFTP4 DAT_4mn.png
+INPUT ../fig/quantile3/TFTP4 DAT_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/TFTP4 DAT_40mn.png
+INPUT ../fig/quantile3/TFTP4 DAT_40mn.png
+INPUT ../fig/quantile3/TFTP4 DAT_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/TFTP4 DAT_400mn.png
+INPUT ../fig/quantile3/TFTP4 DAT_400mn.png
+INPUT ../fig/quantile3/TFTP4 DAT_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/TFTP4_DAT_24s.png
+INPUT ../fig/quantile4/TFTP4_DAT_24s.png
+INPUT ../fig/quantile4/TFTP4_DAT_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/TFTP4 DAT_4mn.png
+INPUT ../fig/quantile4/TFTP4 DAT_4mn.png
+INPUT ../fig/quantile4/TFTP4 DAT_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/TFTP4 DAT_40mn.png
+INPUT ../fig/quantile4/TFTP4 DAT_40mn.png
+INPUT ../fig/quantile4/TFTP4 DAT_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/TFTP4 DAT_400mn.png
+INPUT ../fig/quantile4/TFTP4 DAT_400mn.png
+INPUT ../fig/quantile4/TFTP4 DAT_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/TFTP4_DAT_24s.png
+INPUT ../fig/quantile5/TFTP4_DAT_24s.png
+INPUT ../fig/quantile5/TFTP4_DAT_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/TFTP4 DAT_4mn.png
+INPUT ../fig/quantile5/TFTP4 DAT_4mn.png
+INPUT ../fig/quantile5/TFTP4 DAT_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/TFTP4 DAT_40mn.png
+INPUT ../fig/quantile5/TFTP4 DAT_40mn.png
+INPUT ../fig/quantile5/TFTP4 DAT_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/TFTP4 DAT_400mn.png
+INPUT ../fig/quantile5/TFTP4 DAT_400mn.png
+INPUT ../fig/quantile5/TFTP4 DAT_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/VD2_24s.png
+INPUT ../fig/data/VD2_24s.png
+INPUT ../fig/data/VD2_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/VD2_4mn.png
+INPUT ../fig/data/VD2_4mn.png
+INPUT ../fig/data/VD2_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/VD2_40mn.png
+INPUT ../fig/data/VD2_40mn.png
+INPUT ../fig/data/VD2_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/data/VD2_400mn.png
+INPUT ../fig/data/VD2_400mn.png
+INPUT ../fig/data/VD2_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/VD2_24s.png
+INPUT ../fig/quantile3/VD2_24s.png
+INPUT ../fig/quantile3/VD2_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/VD2_4mn.png
+INPUT ../fig/quantile3/VD2_4mn.png
+INPUT ../fig/quantile3/VD2_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/VD2_40mn.png
+INPUT ../fig/quantile3/VD2_40mn.png
+INPUT ../fig/quantile3/VD2_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile3/VD2_400mn.png
+INPUT ../fig/quantile3/VD2_400mn.png
+INPUT ../fig/quantile3/VD2_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/VD2_24s.png
+INPUT ../fig/quantile4/VD2_24s.png
+INPUT ../fig/quantile4/VD2_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/VD2_4mn.png
+INPUT ../fig/quantile4/VD2_4mn.png
+INPUT ../fig/quantile4/VD2_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/VD2_40mn.png
+INPUT ../fig/quantile4/VD2_40mn.png
+INPUT ../fig/quantile4/VD2_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile4/VD2_400mn.png
+INPUT ../fig/quantile4/VD2_400mn.png
+INPUT ../fig/quantile4/VD2_400mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/VD2_24s.png
+INPUT ../fig/quantile5/VD2_24s.png
+INPUT ../fig/quantile5/VD2_24s.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/VD2_4mn.png
+INPUT ../fig/quantile5/VD2_4mn.png
+INPUT ../fig/quantile5/VD2_4mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/VD2_40mn.png
+INPUT ../fig/quantile5/VD2_40mn.png
+INPUT ../fig/quantile5/VD2_40mn.png
+INPUT /home/joris/Documents/work/quantile_estimation/report/../fig/quantile5/VD2_400mn.png
+INPUT ../fig/quantile5/VD2_400mn.png
+INPUT ../fig/quantile5/VD2_400mn.png
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.aux
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.out
 INPUT /home/joris/Documents/work/quantile_estimation/report/main.out
